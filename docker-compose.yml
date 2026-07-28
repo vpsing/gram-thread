@@ -1,0 +1,44 @@
+
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: gram-thread-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: gramthread
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    image: gram-thread-backend:v2
+    container_name: gram-thread-backend
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: 8000
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USERNAME: root
+      DB_PASSWORD: root123
+      DB_NAME: gramthread
+      JWT_SECRET: mysecretkey123
+
+  frontend:
+    image: gram-thread-frontend:v3
+    container_name: gram-thread-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql_data:
