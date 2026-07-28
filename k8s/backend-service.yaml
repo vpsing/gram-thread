@@ -6,7 +6,6 @@ metadata:
   namespace: gram-thread
 
 spec:
-  
   selector:
     app: backend
 
