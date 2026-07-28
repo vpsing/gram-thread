@@ -69,7 +69,13 @@ pipeline {
         stage('Deploy To Kubernetes') {
             steps {
                 sh '''
-                kubectl apply -f k8s/
+                kubectl apply -f k8s/namespace.yaml
+                kubectl apply -f k8s/backend-deployment.yaml
+                kubectl apply -f k8s/backend-service.yaml
+                kubectl apply -f k8s/frontend-deployment.yaml
+                kubectl apply -f k8s/frontend-service.yaml
+                kubectl apply -f k8s/mysql-deployment.yaml
+                kubectl apply -f k8s/mysql-service.yaml
                 '''
             }
         }
