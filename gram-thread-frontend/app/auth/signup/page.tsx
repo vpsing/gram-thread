@@ -18,8 +18,8 @@ const handleSubmit = async (e: React.FormEvent) => {
   try {
 
     const response = await fetch(
-      //"http://localhost:8000/api/users/signup",
-      "http://108.129.210.146:8000/api/users/signup",
+      "http://localhost:8000/api/users/signup",
+      //"http://108.129.210.146:8000/api/users/signup",
       {
         method: "POST",
 
