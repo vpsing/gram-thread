@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gramthread-ingress
+  namespace: gram-thread
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: gramthread.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 3000
+
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
