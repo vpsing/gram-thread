@@ -20,8 +20,8 @@ spec:
     spec:
       containers:
         - name: backend
-          image: gram-thread-backend:v2
-          imagePullPolicy: Never
+          image: viprana21/gram-thread-backend:latest
+          imagePullPolicy: Always
 
           ports:
             - containerPort: 8000
