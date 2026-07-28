@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar"
+
+import AnouncementNavbar from "@/components/Header/AnouncementNavBar";
+import NavBar from "@/components/Header/NavBar";
+import { Outfit } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
+
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--sans",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,18 +30,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className=" bg-[#F7C5CC] min-h-full flex flex-col">
-        <Navbar/>
-        {children}
-        </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
+
