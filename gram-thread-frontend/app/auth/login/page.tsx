@@ -17,7 +17,7 @@ const router = useRouter();
     // TODO: wire up your auth call here
     console.log({ email, password, remember });
     try {
-    const response = await fetch("http://backend:8000/api/users/login", {
+    const response = await fetch("http://108.129.210.146:30081/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
