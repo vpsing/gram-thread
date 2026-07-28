@@ -18,7 +18,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   try {
 
     const response = await fetch(
-      "http://backend:8000/api/users/signup",
+      "http://localhost:8000/api/users/signup",
       {
         method: "POST",
 
