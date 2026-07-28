@@ -6,6 +6,7 @@ metadata:
   namespace: gram-thread
 
 spec:
+  type: NodePort
   selector:
     app: backend
 
@@ -13,3 +14,4 @@ spec:
     - protocol: TCP
       port: 8000
       targetPort: 8000
+      nodePort: 30081
