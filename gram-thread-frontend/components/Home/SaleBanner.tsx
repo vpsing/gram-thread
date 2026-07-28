@@ -13,7 +13,7 @@ export default function SaleBanner(){
 
       <div className="flex flex-col text-5xl font-bold text-white">
         <span>Summer Sale</span>
-        <span>Is Live Now!</span>
+        <span>Is Live Now! hurry up</span>
         
       </div>
     </div>
