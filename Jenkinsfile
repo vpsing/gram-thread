@@ -77,6 +77,8 @@ pipeline {
                 kubectl apply -f k8s/frontend-service.yaml
                 kubectl apply -f k8s/mysql-deployment.yaml
                 kubectl apply -f k8s/mysql-service.yaml
+                kubectl rollout restart deployment frontend -n gram-thread
+                kubectl rollout restart deployment backend -n gram-thread
                 '''
             }
         }
